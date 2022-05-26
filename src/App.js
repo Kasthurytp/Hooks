@@ -12,6 +12,15 @@ import { loadStripe } from '@stripe/stripe-js';
 import {Elements} from '@stripe/react-stripe-js';
 import Orders from './Components/Orders/Orders';
 import Footer from './Components/Footer/Footer';
+import Topbar from './AdminPannel/Components/Topbar/Topbar';
+import AdHome from './AdminPannel/Components/Pages/Home/AdHome';
+import SignInBusinessAccount from './AdminPannel/Components/SignInBusinessAccount/SignInBusinessAccount';
+import RegisterBusinessAccount from './AdminPannel/Components/RegisterBusinessAccount/RegisterBusinessAccount';
+import User from './AdminPannel/Components/Pages/User/User';
+import AdminPannelHome from './Pages/AdminPannel/AdminPanneHome';
+import AdminPannelUser from './Pages/AdminPannel/AdminPannelUser';
+
+
 
 const promise = loadStripe("pk_test_51L1OiCJeyByGMDpaGgeODbX2pSYgJf3Wb819jTcZbtqnoqEuhnHgkag9oGUn8cWp7RYWRDtQzP2FrKl3Gj2ZvWhc00wFGVdxxA");
 
@@ -39,8 +48,19 @@ function App() {
   
   return (
    <Router>
-     <Header/>
      <Switch>
+
+     <Route path="/RegisterBusinessAccount">
+        <RegisterBusinessAccount/>
+      </Route>
+
+     <Route path="/admin">
+        <AdminPannelHome/>
+      </Route>
+
+     <Route path="/SignInBusinessAccount">
+        <SignInBusinessAccount/>
+      </Route>
 
      <Route path="/orders">
         <Orders/>
@@ -60,7 +80,12 @@ function App() {
         </Elements>
       </Route>
 
+      <Route path="/user">
+        <AdminPannelUser/>
+      </Route>
+
       <Route path="/">
+        <Header/>
         <Home/>
         <Footer/>
       </Route>

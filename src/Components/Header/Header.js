@@ -7,6 +7,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { useStatevalue } from '../Subtotal/StateProvider';
 import { auth } from '../../firebase';
+import AddBusinessIcon from '@mui/icons-material/AddBusiness';
 
 
 export default function Header() {
@@ -24,9 +25,13 @@ export default function Header() {
           <div className='header'>
             {/* top nav bar */}
               <div className='left'>
-                    <Link to="/" className='logo'>Logo</Link>
-                    <a className="seller">Seller</a>
-                    <a className="user">User</a>
+                    <Link to="/" className='logo' style={{ textDecoration: 'none' }}>Hooks</Link>
+                    <Link to='/RegisterBusinessAccount'>
+                      <div className='headerOptionSeller'>
+                          <span className='optionLine1Seller'><AddBusinessIcon className='businessIcon'/></span>
+                          <span className='optionLine2Seller'>Add Business</span>
+                      </div>
+                </Link>
               </div>
             {/* search bar */}
               <div className='search'>
